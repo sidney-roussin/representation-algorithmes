@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-4">
+
+      <div class="row">
+        <div class="col-6">
+          <label for="tri-range" class="col-form-label">Nombre de barres</label>
+        </div>
+        <div class="col-6">
+          <input type="range" class="form-range" min="0" max="100" step="2" id="tri-range">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6">
+          <div id="tri-range-value"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <button type="button" id="tri-button" class="btn btn-primary">
+            <span class="bi bi-play-btn"> </sapn>Démarrer
+          </button>
+          <button type="button" id="tri-button" class="btn btn-primary">
+            <i class="bi bi-pause-btn"></i> Pause
+          </button>
+          <button type="button" id="tri-button" class="btn btn-primary">
+            <i class="bi bi-stop-btn"></i> Stop
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-8" id="tri-graph">
+      <div class="container-fluid">
+        <div class="row flex-nowrap align-items-end" style="height: 400px;">
+          <!-- ici les barres de addBar(...) -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

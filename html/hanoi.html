@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+  
+      <div class="col-4">
+  
+        <div class="row">
+          <div class="col-6">
+            <label for="tri-range" class="col-form-label">Nombre de disques</label>
+          </div>
+          <div class="col-6">
+            <input type="range" class="form-range" min="3" max="12" step="1" id="hanoi-range">
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-6"></div>
+          <div class="col-6">
+            <div id="hanoi-range-value"></div>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col-6"></div>
+          <div class="col-6">
+            <button type="button" id="hanoi-button" class="btn btn-outline-primary">Start</button>
+          </div>
+        </div>
+  
+      </div>
+  
+      <div class="col-8">
+        <div class="container-fluid">
+          <div class="row" style="height: 400px; position:relative;">
+            <div id="hanoi-socle" class="hanoi-board"></div>
+            <div id="hanoi-tour1" class="hanoi-board"></div>
+            <div id="hanoi-tour2" class="hanoi-board"></div>
+            <div id="hanoi-tour3" class="hanoi-board"></div>
+            <div id="hanoi-content">
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>

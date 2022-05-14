@@ -1,0 +1,103 @@
+/*  */
+body {
+    background-color: var(--bs-gray-800);
+    padding: 10px 5px 10px 5px;
+    color: var(--bs-gray-100);
+}
+
+.content {
+    border: 4px solid rgba(13,110,253,.3);
+    border-radius: 5px;
+    background-color: var(--bs-gray-700);
+    margin: 0px 0px 0px 10px;
+}
+
+
+
+
+.tri-bar {
+    padding: 0px;
+    background-color: var(--bs-gray-500);
+    opacity: 1;
+    border: 1px solid var(--bs-gray-300);
+}
+
+.tri-base {
+    animation: tri-base-frame 0.5s infinite;
+}
+
+@keyframes tri-base-frame {
+
+    0%,
+    100% {
+        background-color: var(--bs-gray-500);
+        opacity: 1;
+    }
+
+    50% {
+        background-color: var(--bs-success);
+        opacity: .5;
+    }
+}
+.tri-hit {
+    animation: tri-hit-frame 0.5s infinite;
+}
+
+@keyframes tri-hit-frame {
+
+    0%,
+    100% {
+        background-color: var(--bs-gray-500);
+        opacity: 1;
+    }
+
+    50% {
+        background-color: var(--bs-danger);
+        opacity: .5;
+    }
+}
+
+.tri-progress {
+    background-color: white;
+}
+
+.hanoi-board {
+    position: absolute;
+    background-color: rgb(89, 34, 3);
+    padding:0px;
+    border-radius: 4px;
+}
+
+#hanoi-socle {
+    width:100%;
+    height:10px;
+    bottom:10px;
+}
+
+#hanoi-tour1 {
+    width:8px;
+    height:60%;
+    left:16.66%;
+    bottom:10px;
+}
+#hanoi-tour2 {
+    width:8px;
+    height:60%;
+    left:50%;
+    bottom:10px;
+}
+#hanoi-tour3 {
+    width:8px;
+    height:60%;
+    left:83.33%;
+    bottom:10px;
+}
+
+.hanoi-disk {
+    position: absolute;
+    padding: 0px;
+    border: 1px solid var(--bs-gray-300);
+    border-radius: 4px;
+    transform: translateX(4px);
+    transition: all .2s linear;
+}

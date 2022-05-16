@@ -3,6 +3,7 @@ var hanoiTour1 = [];
 var hanoiTour2 = [];
 var hanoiTour3 = [];
 
+// appelé depuis le main.js
 function hanoiInit() {
   hanoiChangeValue();
   $("#hanoi-range").change(function () {
@@ -68,7 +69,7 @@ function hanoiStep(hanoiGen) {
   setTimeout(function () {
     let actions = hanoiGen.next()
     if (!actions.done) {
-      moveDisk(actions.value[0],actions.value[1]);
+      moveDisk(actions.value[0], actions.value[1]);
       hanoiStep(hanoiGen);
     }
   }, 300);

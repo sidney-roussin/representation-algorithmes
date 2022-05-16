@@ -1,13 +1,15 @@
 
+// execute quand le chargement index.html est terminé
 $(document).ready(function () {
   //selectionne premier menu
   showTabContent($("#tab-list button:first-child"));
-  //
+  //quand clic buton
   $("#tab-list button").on("click", function () {
     showTabContent($(this))
   });
 });
 
+// fonction pour télécharger et afficher le contenu dans le div #main-content
 function showTabContent(element) {
   var bsActiveButton = new bootstrap.Tab(element)
   var section = element.attr("data-load-target")
@@ -18,6 +20,7 @@ function showTabContent(element) {
   });
 }
 
+// appeler initialisation js de la section
 function setupContentJs(section) {
   switch (section) {
     case "tri":

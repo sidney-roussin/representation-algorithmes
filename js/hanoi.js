@@ -23,8 +23,6 @@ function hanoiChangeValue() {
   $("#hanoi-content").empty();
   for (let i = 0; i < nbHanoiDisk; i++) {
     placeDisk(1, nbHanoiDisk - i);
-    //placeDisk(2, i + 1);
-    //placeDisk(3, i + 1);
   }
 }
 

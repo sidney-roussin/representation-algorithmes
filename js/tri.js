@@ -88,10 +88,10 @@ function triStep(timeout) {
     if (!triActive) {
       return;
     }
-    let actions = triGen.next()
-    if (!actions.done) {
-      applyAction(actions.value);
-      triStep(actions.value.timeout || 0);
+    let action = triGen.next();
+    if (!action.done) {
+      applyAction(action.value);
+      triStep(action.value.timeout || 0);
     }
   }, timeout);
 }

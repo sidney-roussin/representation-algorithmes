@@ -16,7 +16,7 @@ function triInit() {
   $("#tri-button-start").click(startTri);
   $("#tri-button-pause").click(pauseTri);
   $("#tri-button-continue").click(continueTri);
-  $("#tri-button-stop").click(resetTriValues);
+  $("#tri-button-reset").click(resetTriValues);
 }
 
 function addBar(parent, height) {
@@ -60,11 +60,11 @@ function showButton() {
   $("#main-content button").hide();
   if (triActive) {
     $("#tri-button-pause").show();
-    $("#tri-button-stop").show();
+    $("#tri-button-reset").show();
   } else {
     if (triGen != undefined) {
       $("#tri-button-continue").show();
-      $("#tri-button-stop").show();
+      $("#tri-button-reset").show();
     } else {
       $("#tri-button-start").show();
     }
@@ -104,12 +104,24 @@ function* tri() {
       if (triNumbers[i] > triNumbers[j]) {
         yield ({ index: j, className: "tri-hit", timeout: 200 });
         [triNumbers[i], triNumbers[j]] = [triNumbers[j], triNumbers[i]]
-        applyAction ({ index: i, height: triNumbers[i] });
+        applyAction({ index: i, height: triNumbers[i] });
         yield ({ index: j, height: triNumbers[j], timeout: 200 });
       }
       applyAction({ index: j, className: "" })
     }
     applyAction({ index: i, className: "" })
+  }
+}
+
+
+//test de l'agorithme de tri sans rien afficher
+function tri_algorithme_simple() {
+  for (let i = 0; i < nbTriBarre - 1; i++) {
+    for (let j = i + 1; j < nbTriBarre; j++) {
+      if (triNumbers[i] > triNumbers[j]) {
+        [triNumbers[i], triNumbers[j]] = [triNumbers[j], triNumbers[i]]
+      }
+    }
   }
 }
 

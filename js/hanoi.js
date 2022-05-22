@@ -119,3 +119,17 @@ function getTourX(tourNb) {
       console.log(`Sorry,invalid tourNb: ${tourNb}.`);
   }
 }
+
+//test de l'agorithme de tri sans rien afficher
+// executer avec hanoi_algorithme_simple(3, 1, 3) par exemple
+function hanoi_algorithme_simple(n, tourNbFrom, tourNbTo) {
+  var tourNbOther = getOtherTourNb(tourNbFrom, tourNbTo);
+  if (n == 1) {
+    return [tourNbFrom + "->" + tourNbTo];
+  } else {
+    var a1 = hanoi_algorithme_simple(n - 1, tourNbFrom, tourNbOther);
+    var a2 = [tourNbFrom + "->" + tourNbTo];
+    var a3 = hanoi_algorithme_simple(n - 1, tourNbOther, tourNbTo);
+    return a1.concat(a2).concat(a3);
+  }
+}
